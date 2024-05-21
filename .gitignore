@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Virtual environments
+/sentiment-env
+
+# Pycache
+/api/__pycache__
