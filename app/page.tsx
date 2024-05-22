@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import Axios from "axios";
+import ChartInfo from "./components/ChartInfo";
 import styles from "@/styles/page.module.scss";
 
 interface InputProps {
@@ -101,6 +102,21 @@ export default function Home() {
               </div>
               <p>{mutation.data.predicted_class[0]}</p>
             </div>
+            <div className={styles["pie-chart"]}>
+              <ChartInfo
+                resultData={mutation.data.probabilities.map(
+                  (result) => Math.round(result.probability * 100) / 100
+                )}
+              />
+            </div>
+            <ul className={styles["probability-info"]}>
+              {mutation.data.probabilities.map((result) => (
+                <li key={result.id}>
+                  <p>{result.class}</p>
+                  <p>{Math.round(result.probability * 100)}%</p>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       )}

@@ -1,6 +1,6 @@
 @use "themeprovider/themeprovider" as theme;
 
-$content-width: min(30em, 87%);
+$content-width: min(35em, 87%);
 
 .title {
   margin-top: 2.5em;
@@ -44,7 +44,9 @@ $content-width: min(30em, 87%);
 
     button {
       align-self: flex-start;
-      padding: 1em;
+      padding: 1.2em 1.5em;
+      border: none;
+      outline: none;
       border-radius: 40px;
       background: theme.$white-color;
       color: theme.$black-color;
@@ -101,7 +103,6 @@ $content-width: min(30em, 87%);
       background: theme.$light-black-color;
       padding: 1.5em 2em;
       border-radius: 20px;
-      margin-bottom: 3em;
       margin-top: 2.5em;
 
       p:first-of-type,
@@ -120,6 +121,48 @@ $content-width: min(30em, 87%);
           height: 100%;
           object-fit: cover;
         }
+      }
+    }
+
+    .pie-chart {
+      align-self: center;
+      width: min(21em, 100%);
+      margin-top: 3em;
+    }
+
+    .probability-info {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 2em;
+      margin-top: 2em;
+      margin-bottom: 4em;
+
+      li:nth-child(1) {
+        background: theme.$red-color;
+        padding: 1em;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 500;
+      }
+
+      li:nth-child(2) {
+        background: theme.$yellow-color;
+        padding: 1em;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 500;
+      }
+
+      li:nth-child(3) {
+        background: theme.$green-color;
+        padding: 1em;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 500;
       }
     }
   }
