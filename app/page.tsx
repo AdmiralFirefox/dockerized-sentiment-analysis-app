@@ -8,6 +8,12 @@ import styles from "./page.module.css";
 interface InputProps {
   user_input: string;
   word_length: string;
+  predicted_class: string[];
+  probabilities: {
+    id: string;
+    class: string;
+    probability: number;
+  }[];
 }
 
 // Define the mutation function
@@ -57,8 +63,9 @@ export default function Home() {
       {mutation.isError && <p>An error occurred.</p>}
       {mutation.isSuccess && (
         <div>
-          <p>{mutation.data.user_input}</p>
-          <p>{mutation.data.word_length}</p>
+          <p>Your input: {mutation.data.user_input}</p>
+          <p>Word Count: {mutation.data.word_length}</p>
+          <p>Predicted class: {mutation.data.predicted_class[0]}</p>
         </div>
       )}
     </main>
