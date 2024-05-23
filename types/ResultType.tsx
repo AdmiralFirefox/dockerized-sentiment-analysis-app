@@ -1,5 +1,6 @@
 export interface ResultType {
   id: string;
+  timestamp: string;
   user_input: string;
   word_length: string;
   predicted_class: string[];

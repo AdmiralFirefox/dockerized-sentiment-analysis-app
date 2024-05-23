@@ -4,6 +4,7 @@ import pandas as pd
 import re
 import joblib
 import uuid
+from datetime import datetime
 
 # App instance
 app = Flask(__name__)
@@ -23,10 +24,15 @@ def return_home():
 
     sentiment_analysis(input, predicted_class, classes, probability_classes);
 
-    probabilities_info = [{"id": uuid.uuid4(),"class": probability_class, "probability": probability} for probability_class, probability in zip(classes,  probability_classes)]
+    # Get Current Date and Time
+    now = datetime.now()
+    dt_string = now.strftime("%B %d, %Y, %I:%M %p")
+
+    probabilities_info = [{"id": uuid.uuid4(), "class": probability_class, "probability": probability} for probability_class, probability in zip(classes, probability_classes)]
     
     return jsonify({
         "id": uuid.uuid4(),
+        "timestamp": dt_string,
         "user_input": input,
         "word_length": word_count,
         "predicted_class": predicted_class,

@@ -42,6 +42,9 @@ export default function SavedResults() {
                 </li>
               ))}
             </ul>
+            <p className={styles["timestamp"]}>
+              Date Analyzed: {result.timestamp}
+            </p>
             <div className={styles["delete-results-button"]}>
               <button onClick={() => dispatch(removeFromResults(result.id))}>
                 Delete Result

@@ -14,6 +14,7 @@ import styles from "@/styles/page.module.scss";
 
 interface InputProps {
   id: string;
+  timestamp: string;
   user_input: string;
   word_length: string;
   predicted_class: string[];
@@ -125,6 +126,9 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <p className={styles["timestamp"]}>
+              Date Analyzed: {mutation.data.timestamp}
+            </p>
             <div className={styles["save-results-button"]}>
               <button
                 onClick={() => dispatch(addToResults(mutation.data))}
@@ -132,7 +136,9 @@ export default function Home() {
                   .map((result) => result.id)
                   .includes(mutation.data.id)}
               >
-                Save Resuts
+                {results.map((result) => result.id).includes(mutation.data.id)
+                  ? "Result Saved"
+                  : "Save Result"}
               </button>
             </div>
           </div>
