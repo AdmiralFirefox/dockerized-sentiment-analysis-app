@@ -5,6 +5,8 @@ import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import Axios from "axios";
 import ChartInfo from "./components/ChartInfo";
+import Loading from "./components/Loading";
+import Error from "./components/Error";
 import styles from "@/styles/page.module.scss";
 
 interface InputProps {
@@ -73,8 +75,8 @@ export default function Home() {
         </form>
       </div>
 
-      {mutation.isPending && <p>Loading...</p>}
-      {mutation.isError && <p>An error occurred.</p>}
+      {mutation.isPending && <Loading />}
+      {mutation.isError && <Error />}
       {mutation.isSuccess && (
         <div className={styles["result-info-wrapper"]}>
           <div className={styles["result-info-content"]}>
