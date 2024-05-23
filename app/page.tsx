@@ -129,7 +129,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <div>
+            <div className={styles["save-results-button"]}>
               <button
                 onClick={() => dispatch(addToResults(mutation.data))}
                 disabled={results

@@ -74,6 +74,7 @@ $content-width: min(35em, 87%);
       background: theme.$white-color;
       color: theme.$black-color;
       transition: background 0.3s ease-in-out;
+      font-size: 0.9rem;
       font-family: var(--poppins);
       font-weight: 700;
       cursor: pointer;
@@ -162,7 +163,6 @@ $content-width: min(35em, 87%);
       width: 100%;
       gap: 2em;
       margin-top: 2em;
-      margin-bottom: 4em;
 
       li:nth-child(1) {
         background: theme.$red-color;
@@ -186,6 +186,36 @@ $content-width: min(35em, 87%);
         text-align: center;
         border-radius: 20px;
         font-weight: 500;
+      }
+    }
+
+    .save-results-button {
+      align-self: center;
+      margin-top: 3em;
+      margin-bottom: 4em;
+
+      button {
+        padding: 1.2em 1.5em;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        background: theme.$white-color;
+        color: theme.$black-color;
+        transition: background 0.3s ease-in-out;
+        font-size: 0.9rem;
+        font-family: var(--poppins);
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          background: theme.$white-color-hover;
+        }
+
+        &[disabled] {
+          background: theme.$gray-color;
+          color: theme.$light-black-color;
+          cursor: not-allowed;
+        }
       }
     }
   }
