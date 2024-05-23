@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import pandas as pd
 import re
 import joblib
 import uuid
@@ -47,17 +46,7 @@ def clean_text(text):
     return text
 
 def sentiment_analysis(text_input, predicted_class, classes, probability_classes):
-    # Load the dataset
-    df = pd.read_csv("data/tweet.csv")
-
-    # Clean the text data in the dataframe
-    df['cleaned_text'] = df['text'].astype(str).apply(clean_text)
-
-    # Map sentiment labels to numerical values
-    label_mapping = {'positive': 2, 'neutral': 1, 'negative': 0}
-    df['label'] = df['sentiment'].map(label_mapping)
-
-    # Load the vectorizer and transform the cleaned text data
+    # Load the vectorizer 
     vectorizer = joblib.load('saved_models/vectorizer.pkl')
 
     # Initialize the classifier
