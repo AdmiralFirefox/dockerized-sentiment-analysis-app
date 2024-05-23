@@ -1,0 +1,128 @@
+@use "themeprovider/themeprovider" as theme;
+
+$content-width: min(40em, 85%);
+
+.result-info-wrapper {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5em;
+  margin-top: 2em;
+  margin-bottom: 4em;
+
+  .result-info-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: $content-width;
+    border: 5px solid theme.$gray-color;
+    border-radius: 20px;
+    padding: 2em 1em;
+
+    .user-input {
+      color: theme.$white-color;
+      font-size: 1.2rem;
+      font-weight: 500;
+      overflow-wrap: break-word;
+      width: 100%;
+    }
+
+    .word-length {
+      color: theme.$white-color;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-top: 0.8em;
+    }
+
+    .predicted-class {
+      color: theme.$white-color;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-top: 0.8em;
+    }
+
+    .pie-chart {
+      align-self: center;
+      width: min(20em, 100%);
+      margin-top: 3em;
+    }
+
+    .probability-info {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 1em;
+      margin-top: 2em;
+
+      li:nth-child(1) {
+        background: theme.$red-color;
+        padding: 1em;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 500;
+      }
+
+      li:nth-child(2) {
+        background: theme.$yellow-color;
+        padding: 1em;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 500;
+      }
+
+      li:nth-child(3) {
+        background: theme.$green-color;
+        padding: 1em;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 500;
+      }
+    }
+
+    .delete-results-button {
+      align-self: center;
+      margin-top: 3em;
+      margin-bottom: 1em;
+
+      button {
+        padding: 1.2em 1.5em;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        background: theme.$white-color;
+        color: theme.$black-color;
+        transition: background 0.3s ease-in-out;
+        font-size: 0.9rem;
+        font-family: var(--poppins);
+        font-weight: 700;
+        cursor: pointer;
+
+        &:hover {
+          background: theme.$white-color-hover;
+        }
+
+        &[disabled] {
+          background: theme.$gray-color;
+          color: theme.$light-black-color;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 36em) {
+  .result-info-wrapper {
+    .result-info-content {
+      padding: 2em 2em;
+
+      .probability-info {
+        gap: 2em;
+      }
+    }
+  }
+}
