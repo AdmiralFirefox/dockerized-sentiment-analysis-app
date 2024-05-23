@@ -68,10 +68,6 @@ export default function Home() {
 
   return (
     <main>
-      <div className={styles["title"]}>
-        <h1>NLP Sentiment Analysis</h1>
-      </div>
-
       <div className={styles["input-wrapper"]}>
         <form onSubmit={handleSubmit} className={styles["form-input"]}>
           <textarea

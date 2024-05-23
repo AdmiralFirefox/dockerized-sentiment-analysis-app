@@ -2,20 +2,10 @@
 
 $content-width: min(35em, 87%);
 
-.title {
-  margin-top: 2.5em;
-
-  h1 {
-    text-align: center;
-    font-weight: 700;
-    color: theme.$white-color;
-  }
-}
-
 .input-wrapper {
   display: flex;
   justify-content: center;
-  margin-top: 2em;
+  margin-top: 1em;
 
   .form-input {
     display: flex;

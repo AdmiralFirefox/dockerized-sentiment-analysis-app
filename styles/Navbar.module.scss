@@ -1,0 +1,36 @@
+@use "themeprovider/themeprovider" as theme;
+
+.navbar-wrapper {
+  display: flex;
+  justify-content: center;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: min(45em, 100%);
+    padding: 1.5em 1em;
+
+    a:first-of-type {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+
+      .svg-wrapper {
+        flex-shrink: 0;
+      }
+
+      h1 {
+        color: theme.$white-color;
+        font-size: clamp(1.2rem, 5vw, 1.5rem);
+        margin-left: 0.5em;
+        margin-right: 0.25em;
+        overflow-wrap: break-word;
+      }
+    }
+
+    a:last-of-type {
+      text-decoration: none;
+    }
+  }
+}
