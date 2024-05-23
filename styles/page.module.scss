@@ -25,11 +25,12 @@ $content-width: min(35em, 87%);
 
     textarea {
       resize: none;
-      border: none;
+      border: 15px solid theme.$light-black-color;
+      outline: none;
       width: 100%;
       height: 20em;
       font-family: var(--poppins);
-      padding: 1.5em;
+      padding: 0.7em 1.5em 0.7em 0.7em;
       font-size: 1rem;
       font-weight: 500;
       border-radius: 20px;
@@ -37,8 +38,30 @@ $content-width: min(35em, 87%);
       color: theme.$white-color;
 
       &:focus {
-        border: none;
+        border: 15px solid theme.$light-black-color;
         outline: none;
+      }
+
+      &:hover {
+        &::-webkit-scrollbar-thumb {
+          background-color: theme.$gray-color;
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: theme.$light-black-color;
+        border-radius: 20px;
+        cursor: initial;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 20px;
+        cursor: initial;
       }
     }
 
