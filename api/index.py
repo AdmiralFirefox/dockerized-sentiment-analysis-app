@@ -76,4 +76,4 @@ def sentiment_analysis(text_input, predicted_class, classes, probability_classes
         probability_classes.append(prob)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(port=8000)
