@@ -8,7 +8,7 @@ Sentiment Analysis Web Application for our final project in NLP subject. TThis p
 
 **Prerequisites**
 
-- You need to have the latest LTS Version of [Node](https://nodejs.org/en) installed (v20.13.1 as of today)
+- You need to have the latest LTS Version of [Node](https://nodejs.org/en) installed (v20.13.1 as of time of this writing)
 
 - Python release version must be around [3.10.11](https://www.python.org/downloads/release/python-31011/)
 
