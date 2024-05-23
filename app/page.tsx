@@ -7,9 +7,13 @@ import Axios from "axios";
 import ChartInfo from "./components/ChartInfo";
 import Loading from "./components/Loading";
 import Error from "./components/Error";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
+import { addToResults } from "@/features/results/ResultsSlice";
+import { ResultType } from "@/types/ResultType";
 import styles from "@/styles/page.module.scss";
 
 interface InputProps {
+  id: string;
   user_input: string;
   word_length: string;
   predicted_class: string[];
@@ -37,6 +41,12 @@ const sendUserInput = async (userInput: string) => {
 
 export default function Home() {
   const [userInput, setUserInput] = useState("");
+
+  const results = useAppSelector(
+    (state: { results: ResultType[] }) => state.results
+  );
+
+  const dispatch = useAppDispatch();
 
   // Use the useMutation hook
   const mutation = useMutation<InputProps, Error, typeof userInput>({
@@ -119,6 +129,16 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <div>
+              <button
+                onClick={() => dispatch(addToResults(mutation.data))}
+                disabled={results
+                  .map((result) => result.id)
+                  .includes(mutation.data.id)}
+              >
+                Save Resuts
+              </button>
+            </div>
           </div>
         </div>
       )}

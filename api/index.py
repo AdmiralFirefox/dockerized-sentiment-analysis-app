@@ -26,6 +26,7 @@ def return_home():
     probabilities_info = [{"id": uuid.uuid4(),"class": probability_class, "probability": probability} for probability_class, probability in zip(classes,  probability_classes)]
     
     return jsonify({
+        "id": uuid.uuid4(),
         "user_input": input,
         "word_length": word_count,
         "predicted_class": predicted_class,
