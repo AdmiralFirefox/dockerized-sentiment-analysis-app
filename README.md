@@ -4,6 +4,12 @@ Sentiment Analysis Web Application for our final project in NLP subject. TThis p
 
 <br />
 
+## App Demo
+
+https://github.com/AdmiralFirefox/nlp-sentiment-analysis-app/assets/79429518/99b47a3a-f3d7-4ee8-b3da-81067a4964a8
+
+<br />
+
 ## Building the Project
 
 **Prerequisites**
