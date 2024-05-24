@@ -10,6 +10,17 @@ https://github.com/AdmiralFirefox/nlp-sentiment-analysis-app/assets/79429518/99b
 
 <br />
 
+## Folder Structure
+```bash
+project/
+├── api/ # Backend Files
+│   └── index.py
+└── app/ # Frontend Files
+    └── ...
+```
+
+<br />
+
 ## Building the Project
 
 **Prerequisites**
