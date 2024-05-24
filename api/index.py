@@ -52,7 +52,7 @@ def sentiment_analysis(text_input, predicted_class, classes, probability_classes
     # Initialize the classifier
     nb_classifier = joblib.load('saved_models/naive_bayes_model.pkl')
 
-    # Clean and vectorize new reviews
+    # Clean and vectorize text input
     new_text_cleaned = clean_text(text_input)
     new_X = vectorizer.transform([new_text_cleaned])
 
