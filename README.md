@@ -1,6 +1,6 @@
 # Sentiment Analysis
 
-Sentiment Analysis Web Application for our final project in NLP subject. TThis project aims to perform sentiment analysis on a dataset of tweets to classify them as positive, negative, or neutral. The dataset used is the Tweet Sentiment Extraction dataset from Kaggle.
+Sentiment Analysis Web Application for our final project in NLP subject. This project aims to perform sentiment analysis on a dataset of tweets to classify them as positive, negative, or neutral. The dataset used is the Tweet Sentiment Extraction dataset from Kaggle.
 
 <br />
 
