@@ -1,0 +1,9 @@
+dockerfiles/next.Dockerfile
+dockerfiles/flask.Dockerfile
+.dockerignore
+node_modules
+npm-debug.log
+README.md
+.next
+.git
+api/__pycache__

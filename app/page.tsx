@@ -25,10 +25,12 @@ interface InputProps {
   }[];
 }
 
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL as string;
+
 // Define the mutation function
 const sendUserInput = async (userInput: string) => {
   const response = await Axios.post(
-    "/api/home",
+    backendUrl,
     { userInput },
     {
       headers: {

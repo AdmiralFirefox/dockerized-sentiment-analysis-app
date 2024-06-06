@@ -10,8 +10,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Setting up endpoint
-@app.route("/api/home", methods=["POST"])
-def return_home():
+@app.route("/api/analyze_text", methods=["POST"])
+def analyze_text():
     data = request.get_json()
     input = data.get("userInput") # defined in useState
     word_count = len(input.split(" "))
