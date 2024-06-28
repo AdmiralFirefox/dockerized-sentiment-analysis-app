@@ -1,0 +1,10 @@
+services:  
+  sentiment-backend:
+    container_name: sentiment-backend
+    image: sentiment-backend:1.2.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+  

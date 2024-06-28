@@ -25,12 +25,14 @@ interface InputProps {
   }[];
 }
 
-const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL as string;
+const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL
+  ? process.env.NEXT_PUBLIC_BACKEND_URL
+  : "http://localhost:8000";
 
 // Define the mutation function
 const sendUserInput = async (userInput: string) => {
   const response = await Axios.post(
-    backendUrl,
+    `${backendUrl}/api/analyze_text`,
     { userInput },
     {
       headers: {
