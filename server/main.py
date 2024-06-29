@@ -3,6 +3,7 @@ from flask_cors import CORS
 import re
 import joblib
 import uuid
+import pytz
 from datetime import datetime
 
 # App instance
@@ -24,14 +25,13 @@ def analyze_text():
     sentiment_analysis(input, predicted_class, classes, probability_classes);
 
     # Get Current Date and Time
-    now = datetime.now()
-    dt_string = now.strftime("%B %d, %Y, %I:%M %p")
+    utc_now = datetime.now(pytz.utc)
 
     probabilities_info = [{"id": uuid.uuid4(), "class": probability_class, "probability": probability} for probability_class, probability in zip(classes, probability_classes)]
     
     return jsonify({
         "id": uuid.uuid4(),
-        "timestamp": dt_string,
+        "timestamp": utc_now.isoformat(),
         "user_input": input,
         "word_length": word_count,
         "predicted_class": predicted_class,

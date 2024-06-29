@@ -3,6 +3,7 @@
 import ChartInfo from "../components/ChartInfo";
 import { useAppSelector, useAppDispatch } from "../hooks";
 import { removeFromResults } from "@/features/results/ResultsSlice";
+import { formatTime } from "@/utils/formatTime";
 import { ResultType } from "@/types/ResultType";
 import styles from "@/styles/SavedResults.module.scss";
 
@@ -43,7 +44,7 @@ export default function SavedResults() {
               ))}
             </ul>
             <p className={styles["timestamp"]}>
-              Date Analyzed: {result.timestamp}
+              Date Analyzed: {formatTime(result.timestamp)}
             </p>
             <div className={styles["delete-results-button"]}>
               <button onClick={() => dispatch(removeFromResults(result.id))}>

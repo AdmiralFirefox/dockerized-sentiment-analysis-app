@@ -1,0 +1,6 @@
+# Virtual environments
+/sentiment-env
+/my-env
+
+# Pycache
+/__pycache__

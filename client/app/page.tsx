@@ -9,6 +9,7 @@ import Loading from "./components/Loading";
 import Error from "./components/Error";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { addToResults } from "@/features/results/ResultsSlice";
+import { formatTime } from "@/utils/formatTime";
 import { ResultType } from "@/types/ResultType";
 import styles from "@/styles/page.module.scss";
 
@@ -131,7 +132,7 @@ export default function Home() {
               ))}
             </ul>
             <p className={styles["timestamp"]}>
-              Date Analyzed: {mutation.data.timestamp}
+              Date Analyzed: {formatTime(mutation.data.timestamp)}
             </p>
             <div className={styles["save-results-button"]}>
               <button
